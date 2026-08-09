@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --app-primary: #00E5FF;
+  --app-secondary: #7B61FF;
+  --app-accent: #14F195;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-background: #050816;
+  --color-primary: var(--app-primary);
+  --color-secondary: var(--app-secondary);
+  --color-accent: var(--app-accent);
+  --color-purple-btn: #A855F7;
+  
+  --font-inter: 'Inter', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-bengali: 'Noto Sans Bengali', sans-serif;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] shadow-[0_8px_32px_0_rgba(0,0,0,0.36)];
+  }
+  
+  .glass-card {
+    @apply bg-[#0c1226] border border-white/[0.08] hover:border-primary/50 transition-colors duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.2)];
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;
+  }
+  
+  .text-gradient-emerald {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-primary;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a3352;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00E5FF;
+}
+
+/* Hide scrollbar for ticker */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
